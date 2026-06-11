@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "Lokalise.i18n-ally",
+    "PKief.material-icon-theme",
+    "antfu.file-nesting",
+    "bierner.github-markdown-preview",
+    "bierner.markdown-preview-github-styles",
+    "biomejs.biome",
+    "ms-vscode.vscode-typescript-next",
+    "pHofer94.vscode-taskviewexplorer",
+    "redhat.vscode-yaml",
+    "tamasfe.even-better-toml"
+  ]
+}

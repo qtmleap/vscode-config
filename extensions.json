@@ -10,6 +10,8 @@
     "ms-vscode.vscode-typescript-next",
     "pHofer94.vscode-taskviewexplorer",
     "redhat.vscode-yaml",
-    "tamasfe.even-better-toml"
+    "tamasfe.even-better-toml",
+    "ms-python.python",
+    "charliermarsh.ruff"
   ]
 }

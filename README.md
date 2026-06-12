@@ -1,9 +1,11 @@
 # vscode-config
 
-Shared VS Code workspace config for qtmleap projects: Biome as the formatter
-(format on save + organize imports on save), a few common editor-behavior
-defaults, and the recommended extension set. Kept in one place so every project
-formats and lints consistently with our Biome setup.
+Shared VS Code workspace config for qtmleap projects. Polyglot baseline:
+**Biome** for JS/TS/JSON and **Ruff** for Python — format on save plus
+organize-imports / fix-all on save — a few common editor-behavior defaults, and
+the recommended extension set. Kept in one place so every project formats and
+lints consistently. Each language block only applies to its own files, so a
+single-language project is unaffected by the others (trim what you don't use).
 
 ## Use
 
@@ -30,6 +32,9 @@ trivial and avoids that footgun.
 
 ## Requires
 
-The `biomejs.biome` extension (in `extensions.json`) — VS Code prompts to install
-recommended extensions on first open. Formatter settings assume the project has a
-`biome.json`.
+The recommended extensions (in `extensions.json`) — VS Code prompts to install
+them on first open. Formatting assumes the relevant config exists in the project:
+`biome.json` for JS/TS, and a Ruff config (`ruff.toml` or `[tool.ruff]` in
+`pyproject.toml`) for Python. Pure-JS projects can drop `ms-python.python` /
+`charliermarsh.ruff` and the `[python]` block; pure-Python projects can drop the
+Biome entries.

@@ -12,6 +12,9 @@
     "redhat.vscode-yaml",
     "tamasfe.even-better-toml",
     "ms-python.python",
-    "charliermarsh.ruff"
+    "charliermarsh.ruff",
+    "rust-lang.rust-analyzer",
+    "llvm-vs-code-extensions.vscode-clangd",
+    "vadimcn.vscode-lldb"
   ]
 }

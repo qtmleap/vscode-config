@@ -1,11 +1,17 @@
 # vscode-config
 
-Shared VS Code workspace config for qtmleap projects. Polyglot baseline:
-**Biome** for JS/TS/JSON and **Ruff** for Python — format on save plus
-organize-imports / fix-all on save — a few common editor-behavior defaults, and
-the recommended extension set. Kept in one place so every project formats and
-lints consistently. Each language block only applies to its own files, so a
-single-language project is unaffected by the others (trim what you don't use).
+Shared VS Code workspace config for qtmleap projects. Polyglot baseline with one
+standard tool per language:
+
+- **JS / TS / JSON** -> Biome (format + organize imports on save)
+- **Python** -> Ruff (format + fix-all + organize imports on save)
+- **Rust** -> rust-analyzer (rustfmt on save, `cargo clippy` for checks)
+- **C / C++** -> clangd (clang-format on save); CodeLLDB for debugging (shared with Rust)
+
+Plus a few common editor-behavior defaults and the recommended extension set.
+Kept in one place so every project formats and lints consistently. Each language
+block only applies to its own files, so a single-language project is unaffected
+by the others (trim what you don't use).
 
 ## Use
 
@@ -34,7 +40,10 @@ trivial and avoids that footgun.
 
 The recommended extensions (in `extensions.json`) — VS Code prompts to install
 them on first open. Formatting assumes the relevant config exists in the project:
-`biome.json` for JS/TS, and a Ruff config (`ruff.toml` or `[tool.ruff]` in
-`pyproject.toml`) for Python. Pure-JS projects can drop `ms-python.python` /
-`charliermarsh.ruff` and the `[python]` block; pure-Python projects can drop the
-Biome entries.
+`biome.json` (JS/TS), a Ruff config (`ruff.toml` or `[tool.ruff]` in
+`pyproject.toml`) for Python, `rustfmt.toml`/Cargo defaults for Rust, and a
+`.clang-format` for C/C++. Drop the language blocks and extensions you don't use.
+
+C/C++ uses clangd (LSP + clang-format) rather than Microsoft C/C++ Tools; if you
+prefer `ms-vscode.cpptools`, swap the `[cpp]`/`[c]` defaultFormatter and the
+extension. Don't enable both clangd and cpptools IntelliSense at once.
